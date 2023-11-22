@@ -201,6 +201,19 @@ public class GildedRoseTest {
 	}
 	
 	@Test
+	public void test_BackstagePassesQualityIncreasesBy2_part2() {
+		GildedRose inn = new GildedRose();
+		inn.setItem(new Item("Backstage passes to a TAFKAL80ETC concert", 11, 20));
+		
+		inn.oneDay();
+		
+		List<Item> items = inn.getItems();
+		int quality = items.get(0).getQuality();
+		
+		assertEquals("testi123", 21, quality);
+	}
+	
+	@Test
 	public void test_BackstagePassesQualityIncreasesBy3() {
 		GildedRose inn = new GildedRose();
 		inn.setItem(new Item("Backstage passes to a TAFKAL80ETC concert", 5, 20));
@@ -211,6 +224,19 @@ public class GildedRoseTest {
 		int quality = items.get(0).getQuality();
 		
 		assertEquals("testi123", 23, quality);
+	}
+	
+	@Test
+	public void test_BackstagePassesQualityIncreasesBy3_part2() {
+		GildedRose inn = new GildedRose();
+		inn.setItem(new Item("Backstage passes to a TAFKAL80ETC concert", 6, 20));
+		
+		inn.oneDay();
+		
+		List<Item> items = inn.getItems();
+		int quality = items.get(0).getQuality();
+		
+		assertEquals("testi123", 22, quality);
 	}
 	
 	@Test
